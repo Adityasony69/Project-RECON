@@ -1,4 +1,11 @@
 import joblib
+import os 
+from dotenv import load_dotenv
+from google import genai
+
+load_dotenv()
+api_key =os.getenv("GEMINI_API_KEY")
+client = genai.Client(api_key=api_key)
 
 # Load the trained model
 model = joblib.load("models/fake_news_model.pkl")
